@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript">
+
+        function clickBtn() {
+            const textbox = document.getElementById("input_stake");
+            const inputValue = textbox.value;
+            getData(inputValue);
+        }
+
+        function getData(inputValue) {
+            var epoch;
+            var current_epoch;
+            var delegators_reward;
+            var pool_active_stake;
+
+            const url = 'https://raw.githubusercontent.com/satoshi-tokyo/reward_calculator/main/json/data.json';
+            $.getJSON(url, (data) => {
+                epoch = data.epoch
+                current_epoch = epoch + 2
+                delegators_reward = data.delegators_reward
+                pool_active_stake = data.pool_active_stake
+
+                delegator_stake = inputValue * 1000000
+                calculated_reward_in_ada = delegators_reward * delegator_stake / pool_active_stake / 1000000
+                calculated_reward_in_ada_rounded = Math.round(calculated_reward_in_ada * 1000) / 1000
+                console.log(calculated_reward_in_ada);
+
+                // Render
+                var stage_block_reward = document.getElementById('stage_block_reward');
+                tag = "<font size='2' color='#77add1'>"
+                tag_block = tag + "エポック" + current_epoch + "での報酬は";
+                tag_block += tag + "<b>" + calculated_reward_in_ada_rounded + "</b> ADAです。<br>";
+                tag_block += "</font>";
+
+                stage_block_reward.innerHTML = tag_block;
+            });
+        };
+    </script>
+
+    <font size='2' color='#808080'>
+        <label for="calcReward">Input (5-10000000)</label><br>
+    </font>
+    <input type="number" placeholder="12345 ADA" id="input_stake" name="input_stake" min="5" max="10000000">
+    <button type="button" style="padding-left: 5px;padding-right: 5px;" onclick="clickBtn()">
+        <font size='2' color='#808080'>送信</font>
+    </button>
+
+    <div style="text-align:left;" id="stage_block_reward"></div>
+
+</body>
+
+</html>
