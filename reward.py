@@ -1,9 +1,11 @@
 import argparse
+import csv
 import json
 import os
 import sys
 
 from calc.calc import RewardCalculation
+from calc.calc_simul import SimulRewardCalculation
 from db.database import Database
 from api.ledger import Ledger
 from api.pool import Pool
@@ -75,6 +77,8 @@ def main():
         "-epoch", help="specify epoch you want to know reward of. Default is current epoch.", type=int, default=cur_epoch)
     parser.add_argument(
         "-stake", help="specify stake amount you are delegating in ADA.", type=int)
+    parser.add_argument(
+        "-simul", help="to simulate with active_stake, pledge, etc..", type=str)
     # TODO to re-write output data
     parser.add_argument(
         "-db", help="retrieves data and outputs", action="store_true")
@@ -99,6 +103,47 @@ def main():
         if not os.path.exists(data_folder):
             os.mkdir(data_folder)
 
+    if args.simul == "active_stake":
+        if args.stake:
+            print("Simulation not permitted to specify stake.")
+            sys.exit(1)
+        simul_folder = "csv"
+        if not os.path.exists(simul_folder):
+            os.mkdir(simul_folder)
+
+        calc_obj = SimulRewardCalculation(calc_epoch)
+        data_exists = calc_obj.check_epoch()
+        if not data_exists:
+            print(f"No data from epoch {calc_epoch} exists in database.")
+            sys.exit(1)
+        calc_obj.get_epoch_stats()
+        calc_obj.get_protocol_params()
+        calc_obj.get_total_supply()
+        _100K = 100000 * 1000000
+        _1M = 1000000 * 1000000
+        _100M = 100000000 * 1000000
+
+        with open(os.path.join(simul_folder, 'simul_pool_active_stake.csv'), 'w') as f:
+            writer = csv.writer(f)
+            data = ["active_stake_in_ada", "reward"]
+            writer.writerow(data)
+            for active_stake in range(_1M, _100M, _1M):
+                calc_obj.get_pool_params(active_stake)
+                # calc_obj.get_pool_blocks_minted()
+                calc_obj.calculate_params()
+                reward = calc_obj.calculate_delegators_reward(_100K) / 1000000
+                # If reward is minus value due to subtraction of fixed fee, set 0 as it is not realistic
+                if reward < 0:
+                    reward = 0
+
+                print(
+                    f"Active Stake:{active_stake}, Reward: {reward}")
+                active_stake_in_ada = active_stake / 1000000
+                data = [active_stake_in_ada, reward]
+                writer.writerow(data)
+
+        sys.exit(0)
+
     calc_obj = RewardCalculation(calc_epoch)
     data_exists = calc_obj.check_epoch()
     if not data_exists:
@@ -112,24 +157,28 @@ def main():
     calc_obj.get_pool_blocks_minted()
     calc_obj.calculate_params()
 
-    if args.db and is_current_epoch:
-        # Write data.json current epoch's reward
-        with open(os.path.join(data_folder, 'data.json'), 'w') as f:
-            json.dump(calc_obj.params, f)
-
-    # e{epoch#}.json for historical data of the epoch
-    epoch_data_json = "e" + str(calc_obj.params["epoch"]) + ".json"
-    with open(os.path.join(data_folder, epoch_data_json), 'w') as f:
-        json.dump(calc_obj.params, f)
+    # If db is specified, write to json file with params.
+    if args.db:
+        if is_current_epoch:
+            # Write data.json current epoch's reward
+            with open(os.path.join(data_folder, 'data.json'), 'w') as f:
+                json.dump(calc_obj.params, f)
+        else:
+            # e{epoch#}.json for historical data of the epoch
+            epoch_data_json = "e" + str(calc_obj.params["epoch"]) + ".json"
+            with open(os.path.join(data_folder, epoch_data_json), 'w') as f:
+                json.dump(calc_obj.params, f)
 
     # If stake is specified, calculate reward of that stake.
-    if args.stake:
+    if args.stake and args.simul is None:
         calc_stake = args.stake * 1000000
         reward = calc_obj.calculate_delegators_reward(calc_stake) / 1000000
         print(f"Reward: {reward} ADA")
 
     # If no stake is specified, output data.
-    if args.stake is None:
+    if args.stake is None and args.simul is None:
+        print(
+            f"Output epoch {calc_obj.params['epoch']} pool reward and parameters..")
         print(calc_obj.params)
 
 
