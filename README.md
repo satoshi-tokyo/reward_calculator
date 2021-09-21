@@ -7,7 +7,7 @@ POOL_ID = "poolxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"  # Pool id
 PROJECT_ID = "XXXXXXXXXXXXXXXXXXXXXXXXXX"  # Project API Key from Blockfrost
 ```
 
-## Command options
+## Command options - reward.py
 -help option 
 ```
 $ python reward.py -h
@@ -17,6 +17,7 @@ optional arguments:
   -h, --help    show this help message and exit
   -epoch EPOCH  specify epoch you want to know reward of. Default is current epoch.
   -stake STAKE  specify stake amount you are delegating in ADA.
+  -simul SIMUL  to simulate with active_stake, pledge, etc..
   -db           retrieves data, store into database and outputs
 ```
 
@@ -35,7 +36,25 @@ Run with no option
 -stake option
 - calculates reward of given active stake amount, i.e., delegator's reward.
 
+-simul option
+1. With `active_stake` as an argument, outputs a csv file with data active_stake_in_ada vs reward assuming 100K ADA is delegated.
+Active stake varies between 1M and 100M, with step of 1M.
+1. With `perf` as an argument, outputs a csv file with data active stake vs pool performance. (working) 
+Get all pool data per epoch, calculates performance, and plots with active stake.
 ```
 $ python reward.py -epoch 290 -stake 40000
 Reward: 16.762797353014584 ADA
 ```
+
+## Command options - pool_stats.py
+
+```
+$ python pool_stats.py -h
+usage: pool_stats.py [-h] [-pool POOL]
+
+optional arguments:
+  -h, --help  show this help message and exit
+  -pool POOL  retrieves data and outputs
+```
+
+`python pool_stats.py -pool all` will query data of all pools and outputs into a csv file.

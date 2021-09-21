@@ -36,5 +36,24 @@ class Pool(object):
             _new_pool_list = json.loads(response.text)
             self.pool_list.extend(_new_pool_list)
             page += 1
+            # # Dev purpose
+            # if page == 2:
+            #     break
             if _new_pool_list == []:
                 break
+
+    def pool_historical_data(self, epoch, ext_pool_id=""):
+        """
+            Returns:
+            data(dict): pool stats of epoch specified. 
+                e.g.,{'epoch': 289, 'blocks': 47, 'active_stake': '48628324341765', 'active_size': 0.00208605009883614, 'delegators_count': 1877, 'rewards': '33625029705', 'fees': '639565267'}
+        """
+        if ext_pool_id:
+            url = self.mainnet_url + "/pools/" + ext_pool_id + "/history"
+        else:
+            url = self.mainnet_url + "/pools/" + POOL_ID + "/history"
+        response = requests.get(url, headers=HEADERS)
+        for data in json.loads(response.text):
+            if data["epoch"] == epoch:
+                return data
+        return {"status": "Epoch data not found", "message": "Pool might be too new to have epoch {} data".format(epoch)}
