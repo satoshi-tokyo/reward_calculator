@@ -5,7 +5,8 @@ import os
 import sys
 
 from calc.calc import RewardCalculation
-from calc.calc_simul import SimulRewardCalculation
+from calc.calc_simul_active_stake import SimulRewardCalculation
+from calc.calc_simul_perf import SimulPerfCalculation
 from db.database import Database
 from api.ledger import Ledger
 from api.pool import Pool
@@ -76,7 +77,7 @@ def main():
     parser.add_argument(
         "-epoch", help="specify epoch you want to know reward of. Default is current epoch.", type=int, default=cur_epoch)
     parser.add_argument(
-        "-stake", help="specify stake amount you are delegating in ADA.", type=int)
+        "-stake", help="specify stake amount you are delegating in ADA.", type=float)
     parser.add_argument(
         "-simul", help="to simulate with active_stake, pledge, etc..", type=str)
     # TODO to re-write output data
@@ -143,6 +144,73 @@ def main():
                 writer.writerow(data)
 
         sys.exit(0)
+
+    # Process for pool performance vs active stake
+    if args.simul == "perf":
+        if args.stake:
+            print("Simulation not permitted to specify stake.")
+            sys.exit(1)
+        simul_folder = "csv"
+        if not os.path.exists(simul_folder):
+            os.mkdir(simul_folder)
+
+        # Takes data from 2 epochs ago.
+        # Active stake and total blocks (21600)
+        calc_obj = SimulPerfCalculation(calc_epoch)
+        calc_obj.get_epoch_stats()
+        calc_epoch = calc_obj.params["epoch"]
+        total_active_stake = calc_obj.params["total_active_stake"]
+        total_blocks = calc_obj.params["total_blocks"]
+
+        pool_obj = Pool()
+        pool_obj.pool_list_all()
+        with open(os.path.join(simul_folder, 'pool_perf_active_staket.csv'), 'w') as f:
+            writer = csv.writer(f)
+            data = ["epoch",
+                    "total_active_stake",
+                    "total_blocks",
+                    "pool_id",
+                    "blocks",
+                    "active_stake",
+                    "active_size",
+                    "delegators_count",
+                    "rewards",
+                    "fees",
+                    "pool_perf"
+                    ]
+            writer.writerow(data)
+
+            for pool_id in pool_obj.pool_list:
+                p = pool_obj.pool_historical_data(
+                    calc_epoch, ext_pool_id=pool_id)
+                if "status_code" in p.keys():
+                    if p["status_code"] == 404:
+                        print(
+                            "Pool information not found. Looks like the loop has reached the last page.")
+                        break
+                if "status" in p.keys():
+                    if p["status"] == "Epoch data not found":
+                        print(p["message"])
+                        continue
+
+                calc_obj.set_pool_params(p["active_stake"], p["blocks"])
+                calc_obj.calculate_params()
+                data = [calc_epoch,
+                        total_active_stake,
+                        total_blocks,
+                        pool_id,
+                        p["blocks"],
+                        p["active_stake"],
+                        p["active_size"],
+                        p["delegators_count"],
+                        p["rewards"],
+                        p["fees"],
+                        calc_obj.params["pool_perf"]
+                        ]
+                print(data)
+                writer.writerow(data)
+
+            sys.exit(0)
 
     calc_obj = RewardCalculation(calc_epoch)
     data_exists = calc_obj.check_epoch()

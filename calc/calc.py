@@ -58,6 +58,9 @@ class RewardCalculation(object):
         self.params["block_minted"] = block_count
 
     def calculate_params(self):
+        # self.params["Re"] = self.params["total_fees"] + self.params["rho"] * \
+        #     (self.params["max_supply"] - self.params["total_supply"])
+
         self.params["Re"] = self.params["rho"] * \
             (self.params["max_supply"] - self.params["total_supply"])
 
