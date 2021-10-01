@@ -58,3 +58,24 @@ optional arguments:
 ```
 
 `python pool_stats.py -pool all` will query data of all pools and outputs into a csv file.
+
+
+## tweet.py
+Tweet pool statistics.
+```
+$ python tweet.py -h
+usage: tweet.py [-h] [-test TEST]
+
+optional arguments:
+  -h, --help  show this help message and exit
+  -test TEST  specify y to run a test (this does not post), defaulted no.
+```
+
+### settings.py
+Requires API keys as below:
+```
+API_KEY = 'XXXXXXXXXXXXXXXXXX'
+API_SECRET = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+ACCESS_TOKEN = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+ACCESS_SECRET = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+```

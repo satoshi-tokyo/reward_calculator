@@ -88,6 +88,7 @@ def main():
 
     is_current_epoch = False
     if args.epoch == cur_epoch:
+        # Work with current epoch's data
         is_current_epoch = True
 
     # Take data from 2 epochs ago, and calculate reward of it.
@@ -230,6 +231,10 @@ def main():
         if is_current_epoch:
             # Write data.json current epoch's reward
             with open(os.path.join(data_folder, 'data.json'), 'w') as f:
+                json.dump(calc_obj.params, f)
+            # e{epoch#}.json for historical data of the epoch
+            epoch_data_json = "e" + str(calc_obj.params["epoch"]) + ".json"
+            with open(os.path.join(data_folder, epoch_data_json), 'w') as f:
                 json.dump(calc_obj.params, f)
         else:
             # e{epoch#}.json for historical data of the epoch
