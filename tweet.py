@@ -29,6 +29,7 @@ def main():
     diff = unix_time - epoch_start_time
 
     five_hours_in_seconds = 5 * 60 * 60
+    # Runs if it is within 5 hours after epoch start
     if five_hours_in_seconds >= diff or is_test:
         print(f"Epoch {epoch_latest} has just started!")
         print(_epoch_latest)
@@ -85,7 +86,6 @@ Epoch {} もよろしくお願いします！
 #Cardano #Blockfrost
         """.format(calc_epoch, p["blocks"], active_stake_in_ada_m, performance_in_prct, epoch_latest, dt_epoch_start, dt_epoch_end)
         twitter_obj = Tweet()
-        # resp = twitter_obj.post(text)
         if is_test:
             resp = twitter_obj.test_post(text)
         else:
