@@ -4,6 +4,7 @@ import json
 import os
 import sys
 
+
 from calc.calc import RewardCalculation
 from calc.calc_simul_active_stake import SimulRewardCalculation
 from calc.calc_simul_perf import SimulPerfCalculation
@@ -234,13 +235,39 @@ def main():
                 json.dump(calc_obj.params, f)
             # e{epoch#}.json for historical data of the epoch
             epoch_data_json = "e" + str(calc_obj.params["epoch"]) + ".json"
-            with open(os.path.join(data_folder, epoch_data_json), 'w') as f:
+            with open(os.path.join(data_folder, epoch_data_json), "w") as f:
                 json.dump(calc_obj.params, f)
         else:
             # e{epoch#}.json for historical data of the epoch
             epoch_data_json = "e" + str(calc_obj.params["epoch"]) + ".json"
-            with open(os.path.join(data_folder, epoch_data_json), 'w') as f:
+            with open(os.path.join(data_folder, epoch_data_json), "w") as f:
                 json.dump(calc_obj.params, f)
+        summary = []
+        for e_file in os.listdir(data_folder):
+            if e_file in ["data.json", "summary.json"]:
+                continue
+            with open(os.path.join(data_folder, e_file), "r") as f:
+                _e_data = json.load(f)
+                e_data = {}
+                e_data["epoch"] = _e_data["epoch"]
+
+                e_data["pool_active_stake"] = round(
+                    _e_data["pool_active_stake"] / 1000000 / 1000000, 3)
+                e_data["pool_live_stake"] = round(
+                    _e_data["pool_live_stake"] / 1000000 / 1000000, 3)
+                e_data["declared_pledge"] = round(
+                    _e_data["declared_pledge"] / 1000000)
+                e_data["live_pledge"] = round(
+                    _e_data["live_pledge"] / 1000000)
+                e_data["margin_cost"] = round(_e_data["margin_cost"] * 100, 2)
+                e_data["fixed_cost"] = round(
+                    _e_data["fixed_cost"] / 1000000)
+                e_data["block_minted"] = _e_data["block_minted"]
+                e_data["pool_perf"] = round(_e_data["pool_perf"] * 100)
+                summary.append(e_data)
+        if summary:
+            with open(os.path.join(data_folder, "summary.json"), "w") as f:
+                json.dump(summary, f)
 
     # If stake is specified, calculate reward of that stake.
     if args.stake and args.simul is None:

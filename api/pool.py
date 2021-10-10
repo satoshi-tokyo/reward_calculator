@@ -42,7 +42,7 @@ class Pool(object):
             if _new_pool_list == []:
                 break
 
-    def pool_historical_data(self, epoch, ext_pool_id=""):
+    def pool_historical_data(self, epoch="", ext_pool_id=""):
         """
             Returns:
             data(dict): pool stats of epoch specified. 
@@ -53,7 +53,10 @@ class Pool(object):
         else:
             url = self.mainnet_url + "/pools/" + POOL_ID + "/history"
         response = requests.get(url, headers=HEADERS)
-        for data in json.loads(response.text):
-            if data["epoch"] == epoch:
-                return data
+        if epoch:
+            for data in json.loads(response.text):
+                if data["epoch"] == epoch:
+                    return data
+        else:
+            return json.loads(response.text)
         return {"status": "Epoch data not found", "message": "Pool might be too new to have epoch {} data".format(epoch)}
