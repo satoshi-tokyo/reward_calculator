@@ -242,7 +242,7 @@ def main():
             epoch_data_json = "e" + str(calc_obj.params["epoch"]) + ".json"
             with open(os.path.join(data_folder, epoch_data_json), "w") as f:
                 json.dump(calc_obj.params, f)
-        summary = []
+        _summary = []
         for e_file in os.listdir(data_folder):
             if e_file in ["data.json", "summary.json"]:
                 continue
@@ -264,8 +264,9 @@ def main():
                     _e_data["fixed_cost"] / 1000000)
                 e_data["block_minted"] = _e_data["block_minted"]
                 e_data["pool_perf"] = round(_e_data["pool_perf"] * 100)
-                summary.append(e_data)
-        if summary:
+                _summary.append(e_data)
+        if _summary:
+            summary = sorted(_summary, key=lambda x: x['epoch'], reverse=True)
             with open(os.path.join(data_folder, "summary.json"), "w") as f:
                 json.dump(summary, f)
 
