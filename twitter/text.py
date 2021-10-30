@@ -1,0 +1,302 @@
+import random
+
+
+def day2():
+    """ Texts regarding stake pool in Japanese & English.
+    Returns:
+        text(str)
+    """
+
+    text1 = """
+普段はサーバ関連のインフラエンジニアとして働いています。
+LinuxやチャールズさんオススメのPythonでプログラムを組んで仕事効率化の取り組みもしています。
+
+#Cardano の構想やシステムに賛同し、ステークプールオペレータとしても貢献してきたいと思っていますのでよろしくお願いします！
+"""
+
+    text1e = """
+I usually work as a server-related infrastructure engineer.
+My focus is to improve work efficiency by programming in Linux and Python recommended by Charles.
+
+I would like to support the concept and system of #Cardano and contribute to it as a stakepool operator!
+"""
+
+    text2 = """
+SUGAR ステークプールは2020年8月に立ち上げた、東京とロンドン設置のプールです。
+これまでに500以上のブロック生成の成功実績があります。
+安定運用し、安心してご委任いただけるよう努力してまいりますので、委任のご検討、ご協力のほどよろしくお願いします。
+"""
+
+    text2e = """
+SUGAR Stake Pool was launched in August 2020 and is located in Tokyo and London.
+We have successfully generated over 500 blocks.
+SUGAR Stake Pool will continue to strive for stable and secure operation, so please consider delegating and cooperate with us.
+"""
+
+    text3 = """
+SUGAR ステークプールは「段階的な手数料」で運営しております。
+ステークが10M集まるまでは0%で、委任のご協力をいただいている皆様へのメリット重視で運用いたします。
+
+詳細についてはブログもご覧ください。
+https://sugarstakepool.jp/2021/09/18/pool_fee/
+"""
+
+    text3e = """
+SUGAR Stake Pool is operated on a "tiered fee" basis.
+The fee will be 0% until 10M stakes are collected to focus on the benefits to those who have been cooperating in the delegation.
+
+For more information, please also visit our blog.
+https://sugarstakepool.jp/2021/09/18/pool_fee/
+"""
+
+    text4 = """
+堅牢な #Cardano システムのため、分散化が重要です。
+SUGAR ステークプールでは、下記の様な考えで運営しております。
+
+- 委任者や参加者が増えてほしい
+- 小さいプールが育つのを応援したい
+- 複数プール運営をする前に、その他の対応での検討が大事
+"""
+
+    text4e = """
+Decentralization is important for a robust #Cardano system.
+SUGAR Stake Pool is operated with the following ideas.
+
+- Welcome more delegators and participants.
+- Be supportive to growth of small pools.
+- Before running multiple pools, it is important to consider in other methods.
+"""
+
+    text5 = """
+プールの運用実績はこちらへまとめております。
+報酬のシミュレーションは参考値としてご活用ください。
+
+#Cardano
+https://sugarstakepool.jp/dashboard/
+"""
+
+    text5e = """
+Pool statistics are summarized here.
+Please use the reward simulation as a reference.
+
+#Cardano
+https://sugarstakepool.jp/dashboard/
+"""
+
+    text_list = [text1, text2, text3, text4, text5,
+                 text1e, text2e, text3e, text4e, text5e]
+    return random.choice(text_list)
+
+
+def day3():
+    """ Texts regarding staking (and Cardano) in general in Japanese.
+    Returns:
+        text(str)
+    """
+
+    text1 = """
+#Cardano $ADA を購入した後はぜひステーキングをご検討ください！
+ホールドしたままの方は、毎エポック（5日に1度）の報酬、年間5％の利益を逃しているのでもったいないです。
+ステーキングによる資産を失うリスクはなく、「〜日間は取り出せない」などのロックもありません。
+"""
+
+    text2 = """
+飽和したプールにご注意ください。
+以前検証した時は、本来もらえていた報酬より確実に減るという結果になりました。
+飽和したプールではステークが増えるほど報酬は少なくなります。
+"""
+
+    text3 = """
+宣言済み誓約に達していないプールについてです。
+「オペレータが宣言した出資額」に「実際の出資」が満たない場合、報酬がもらえなくなってしまいますのでご注意ください。
+#PoolTool ではバツマークがついています。
+
+https://pooltool.io/
+"""
+
+    text4 = """
+プールにおける報酬分配までの流れ
+1エポック目: 有効ステーク量に応じ、ブロック生成スケジュールがランダムに割り当てられる。
+2エポック目: スケジュールされたブロックを生成する。
+3エポック目: パフォーマンスに基づいて報酬が計算される。
+4エポック目: 報酬がステークホルダーに分配される。
+"""
+
+    text5 = """
+チャールズさん語録(1)
+"Don’t pay attention to the noise, follow the facts."
+「雑音を気にせず、事実を追いかけましょう」
+"""
+
+    text6 = """
+チャールズさん語録(2)
+"Don’t be evil" to "Can’t be evil"
+「悪になるな」(と戒める社会)から「悪になれない」（仕組み）へ。
+"""
+
+    text7 = """
+初めての委任と報酬
+初めて委任された方は、ちゃんとステーキングができている状態なのか心配になるかもしれません。
+
+仕組み上、初の委任後、初の報酬は15〜20日後になります。
+以降は5日ごとに報酬を獲得していくことになりますので、少しの間お待ちいただければと思います。
+
+#Cardano $ADA
+"""
+
+    text8 = """
+もし #Cardano $ADA の委任操作が正常にできているか不安になった場合は、お気軽にお問い合わせください。
+例）報酬が思った通り確認できない、いくらの報酬が入っているはずか、など
+"""
+
+    text9 = """
+委任ができた後は
+追加操作なしで、1エポックごとに報酬が入り続けることになります。（1エポックという #Cardano 時間があり、1エポック=5日に相当します）
+得た報酬も含め委任をしている状態（福利運用）となり、1エポック毎の報酬にはばらつきが出るものの、年利4～5%が期待できます。
+"""
+
+    text10 = """
+#Cardano ステーク・プールを探すには
+#PoolTool はシンプルな表示で、プールの手数料の一覧や、その他判断に必要な情報がしっかりと載っています。
+嬉しい報酬履歴一覧の機能、プールのブロック生成状況、ROS傾向などが確認できます。
+
+https://pooltool.io/
+"""
+
+    text11 = """
+#Cardano では投票することで報酬を得ることができます。
+「報酬は支払い用の（受け取り）アドレスではなく、報酬アドレス（ステークキー）に送信されるため、報酬の残高が増加します。」
+
+#ProjectCatalyst では、資金提供する開発やプロジェクトへ誰でも提案と投票ができます。
+"""
+
+    text12 = """
+#ProjectCatalyst の提案と投票
+報酬を除く500 ADA以上あるウォレットは投票する資格があります。
+そのため、ほぼ誰でも、 #Cardano の今後に直接関われる重要な意思決定です。
+"""
+
+    text13 = """
+委任とは
+$ADA ホルダーが自身のADAに付随するステークをステーク・プールに預ける行為です。
+これにより、サーバ運用しなくてもネットワークに参加し、委任したステーク量に応じてブロック生成に関わることができます。
+* ADAを「送金」することではないため、委任によるADAの損失はありません。
+"""
+
+    text14 = """
+ステーク・プールがブロック生成を担う「スロット・リーダ」に選ばれる確率は、そのプールに委任されたステークの量に比例します。
+ブロック生成に成功させることでプールは報酬を受け取り、その報酬は各メンバーが委任したステークの量に応じて分配されます。
+"""
+
+    text_list = [text1, text2, text3, text4,
+                 text5, text6, text7, text8, text9, text10, text11, text12, text13, text14]
+    return random.choice(text_list)
+
+
+def day4():
+    """ Texts regarding staking (and Cardano) in general in English.
+    Returns:
+        text(str)
+    """
+
+    text1 = """
+After you buy #Cardano $ADA, please consider staking it!
+If you are still holding, you are missing out on the reward of every epoch (every 5 days) and 4-5% profit per year!
+There is no risk of losing your assets by staking, and your asset won't be locked.
+"""
+
+    text2 = """
+Beware of saturated pools.
+When I verified this before, I found that the rewards were definitely less than what I had originally received.
+In a saturated pool, the more stakes delegated, the less reward you get.
+"""
+
+    text3 = """
+This is about pools that have not reached their declared pledges.
+Please note that if the Actual Pledge doesn't reach the amount of Declared Pledge by the operator, you will not receive any reward.
+#PoolTool shows an X on such a pool.
+
+https://pooltool.io/
+"""
+
+    text4 = """
+Rewards delivery:
+
+Epoch 1: Each pool is randomly assigned block generation schedules based on amount of its active stake.
+Epoch 2: Scheduled blocks are minted by the pool.
+Epoch 3: Reward is calculated based on performance.
+epoch 4: Rewards are delivered to stake holders.
+"""
+
+    text5 = """
+"Don’t pay attention to the noise, follow the facts." - Charles Hoskinson
+"""
+
+    text6 = """
+"Don’t be evil" to "Can’t be evil" - Charles Hoskinson
+"""
+
+    text7 = """
+For the first time of delegation, you may be worried about whether you are in a proper staking condition.
+
+After your first delegation, your first reward will come after 15-20 days.
+After that, you will earn rewards every 5 days, so please wait for a while.
+
+#Cardano
+"""
+
+    text8 = """
+If you are not sure if your #Cardano $ADA delegation operation is working properly, please feel free to contact us.
+E.g., Can't see reward as expected, how much reward is expected, etc.
+"""
+
+    text9 = """
+After you have delegated, you will continue to be rewarded for each epoch without any additional action.
+There is a #Cardano time called 1 epoch, where 1 epoch equals 5 days.
+You can expect to earn 4-5% interest per year, although the reward per epoch may vary.
+"""
+
+    text10 = """
+How to find a #Cardano stake pool
+#PoolTool has a simple display, with a good list of pool fees and other information you need to make a decision.
+It has a nice reward history list feature, the pool's block generation status, and ROS trends.
+
+https://pooltool.io/
+"""
+
+    text11 = """
+In #Cardano, you can earn rewards by voting.
+"Rewards are sent to the reward address (stakekey), not the payment (receipt) address, so your reward balance will grow."
+
+With #ProjectCatalyst, anyone can propose/vote for developments and projects to be funded.
+"""
+
+    text12 = """
+Proposal and vote for #ProjectCatalyst
+Wallets with 500 ADA or more, excluding rewards, are eligible to vote.
+So almost anyone can be directly involved in the future of #Cardano.
+"""
+
+    text13 = """
+Delegation in #Cardano is the act of ADA holders depositing stakes associated with $ADA into stake pools.
+This allows to participate in maintaining network without running servers.
+* There is no loss of ADA due to delegation, as it is not "transferring" actual ADA.
+"""
+
+    text14 = """
+Probability of a stake pool being chosen as a "slot leader" responsible for block generation is proportional to its stake.
+The pool is rewarded for successful block generation.
+The reward is distributed according to the amount of stake each member has delegated.
+"""
+
+    text_list = [text1, text2, text3, text4,
+                 text5, text6, text7, text8, text9, text10, text11, text12, text13, text14]
+    return random.choice(text_list)
+
+
+def day5():
+    """ Texts for useful information for staking life
+    Returns:
+        text(str)
+    """
+    pass

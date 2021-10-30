@@ -18,7 +18,6 @@ class Tweet(object):
         resp = self.api.update_status(text)
         return resp
 
-    def test_post(self, t):
-        print(t)
-
-        return None
+    def test_post(self, text):
+        print(text)
+        return f"This is a mock tweet with {len(text)} characters."
