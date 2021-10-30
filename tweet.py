@@ -6,6 +6,7 @@ from api.ledger import Ledger
 from api.pool import Pool
 from calc.calc_simul_perf import SimulPerfCalculation
 from twitter.twitter import Tweet
+from twitter import text as txt
 
 
 def main():
@@ -26,17 +27,39 @@ def main():
     epoch_end_time = _epoch_latest["end_time"]
 
     unix_time = time.time()
-    diff = unix_time - epoch_start_time
+    # diff = unix_time - epoch_start_time
 
-    five_hours_in_seconds = 5 * 60 * 60
-    # Runs if it is within 5 hours after epoch start
-    if five_hours_in_seconds >= diff or is_test:
+    print(f"Unix time: {unix_time}")
+    print(f"Epoch start time: {epoch_start_time}")
+    print(f"Epoch end time: {epoch_end_time}")
+    one_day_in_seconds = 24 * 60 * 60
+    first_day_end = epoch_start_time + one_day_in_seconds
+    second_day_end = epoch_start_time + 2 * one_day_in_seconds
+    third_day_end = epoch_start_time + 3 * one_day_in_seconds
+    fourth_day_end = epoch_start_time + 4 * one_day_in_seconds
+    fifth_day_end = epoch_start_time + 5 * one_day_in_seconds
+
+    twitter_obj = Tweet()
+    if unix_time >= fourth_day_end and unix_time < fifth_day_end:
+        print("DAY 5")
+        text = txt.day5()
+    elif unix_time >= third_day_end and unix_time < fourth_day_end:
+        print("DAY 4")
+        text = txt.day4()
+    elif unix_time >= second_day_end and unix_time < third_day_end:
+        print("DAY 3")
+        text = txt.day3()
+    elif unix_time >= first_day_end and unix_time < second_day_end:
+        print("DAY 2")
+        text = txt.day2()
+    elif unix_time >= epoch_start_time and unix_time < first_day_end:
+        print("DAY 1")
         print(f"Epoch {epoch_latest} has just started!")
         print(_epoch_latest)
         print(f"Epoch: {epoch_latest}")
         print(f"Epoch start time: {epoch_start_time}")
         print(f"Unix time: {unix_time}")
-        print(f"Difference: {diff}")
+        # print(f"Difference: {diff}")
 
         # dt_now = datetime.datetime.fromtimestamp(
         #     unix_time, datetime.timezone(datetime.timedelta(hours=9)))
@@ -85,14 +108,13 @@ Epoch {} もよろしくお願いします！
 
 #Cardano #Blockfrost
         """.format(calc_epoch, p["blocks"], active_stake_in_ada_m, performance_in_prct, epoch_latest, dt_epoch_start, dt_epoch_end)
-        twitter_obj = Tweet()
-        if is_test:
-            resp = twitter_obj.test_post(text)
-        else:
-            resp = twitter_obj.post(text)
 
-        print("Tweet result:")
-        print(f"Resp: {resp}")
+    if is_test:
+        resp = twitter_obj.test_post(text)
+    else:
+        resp = twitter_obj.post(text)
+    print("Tweet result:")
+    print(f"Resp: {resp}")
 
 
 if __name__ == "__main__":
