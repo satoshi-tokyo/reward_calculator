@@ -313,7 +313,7 @@ Guidelines for secure wallet management for #Cardano users.
 To prevent unexpected theft and accidents, please take a moment to have a look!
 This is a good reference for cryptographic assets in general as well as general security measures.
 
-https://bit.ly/3EtNgt6
+https://bit.ly/3BtV1x9
 """
 
     text_list = [text1, text1e]
