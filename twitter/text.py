@@ -299,4 +299,22 @@ def day5():
     Returns:
         text(str)
     """
-    pass
+
+    text1 = """
+#Cardano ユーザ向けに、安全なウォレット管理のためのガイドラインです。
+思いもよらない盗難や事故防止のためにも、お時間のある時にぜひご一読ください！
+暗号資産全般はもちろん、一般的なセキュリティ対策の参考になります。
+
+https://bit.ly/3EtNgt6
+"""
+
+    text1e = """
+Guidelines for secure wallet management for #Cardano users.
+To prevent unexpected theft and accidents, please take a moment to have a look!
+This is a good reference for cryptographic assets in general as well as general security measures.
+
+https://bit.ly/3EtNgt6
+"""
+
+    text_list = [text1, text1e]
+    return random.choice(text_list)
