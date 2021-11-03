@@ -316,5 +316,50 @@ This is a good reference for cryptographic assets in general as well as general 
 https://bit.ly/3BtV1x9
 """
 
-    text_list = [text1, text1e]
+    text2 = """
+「委任をするだけでなぜ報酬を得ることができるのか？報酬はどこからくるのか？」など、
+ステーキングに関して、いただいたご質問にお答えした内容の記事です。
+疑問の解消に貢献できれば嬉しいです！
+
+#Cardano
+https://sugarstakepool.jp/2021/08/15/delegation-reward/
+"""
+
+    text2e = """
+"Why do I get paid just for delegating?"
+"Where does reward come from?"
+If you have any questions about staking, I hope this blog will help.
+
+#Cardano
+https://sugarstakepool.jp/2021/08/15/delegation-reward/
+"""
+
+    text3 = """
+初めてプールに委任した時、手数料、誓約金など、色々な数値があり困惑したことがあります。
+委任者目線でどこをみれば良いのか、どんなプールに気を付けるといいのかを書いた記事になります。
+プール選びのご参考の一つにしていただけると嬉しいです。
+
+#Cardano
+https://sugarstakepool.jp/2021/04/10/how-to-select-pool/
+"""
+
+    text3e = """
+When I first staked with a pool, I wasn't familiar with various numbers of fees, pledges, etc.
+This blog is about what to look for and what pools to watch out for from the perspective of a delegator, hopefully to help in finding a pool.
+
+#Cardano
+https://sugarstakepool.jp/2021/04/10/how-to-select-pool/
+"""
+
+    text4 = """
+投票をすることで、今後の報酬へ影響があるかもしれません。
+投票やガバナンス、ボルテールなどについて概要レベルでとまとめてみました。
+投票方法や関連リンクもありますので、これを機会に参加者が増えればと願っています。
+
+#Cardano
+https://sugarstakepool.jp/2021/07/11/catalyst/
+"""
+
+    text_list = [text1, text2, text3, text4,
+                 text1e, text2e, text3e]
     return random.choice(text_list)
