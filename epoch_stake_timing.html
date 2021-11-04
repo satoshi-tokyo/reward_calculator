@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript">
+        getTimings();
+
+        function getTimings() {
+            const url = 'https://raw.githubusercontent.com/satoshi-tokyo/reward_calculator/main/json/epoch_stake_timing.json';
+            $.getJSON(url, (data2) => {
+                console.log(data2)
+                tag_timing = '<figure class="wp-block-table"><table><tbody><tr>'
+                tag_timing += '<tr><th>Epoch</th>'
+                tag_timing += '<th>Epoch Start</th>'
+                tag_timing += '<th>Epoch End</th>'
+                tag_timing += '<th>Deleg Epoch</th>'
+                tag_timing += '<th>Deleg Epoch Start</th>'
+                tag_timing += '<th>Deleg Epoch End</th>'
+                tag_timing += '</tr>'
+                for (let i = 0; i < data2.length; i++) {
+                    tag_timing += '<tr><td>' + data2[i].epoch + '</td>'
+                    tag_timing += '<td>' + data2[i].start_time + '</td>'
+                    tag_timing += '<td>' + data2[i].end_time + '</td>'
+                    tag_timing += '<td>' + data2[i].epoch_deleg + '</td>'
+                    tag_timing += '<td>' + data2[i].start_time_deleg + '</td>'
+                    tag_timing += '<td>' + data2[i].end_time_deleg + '</td>'
+                    tag_timing += '</tr>'
+                };
+                tag_timing += '</tbody></table></figure>'
+                stage_timing.innerHTML = tag_timing;
+            });
+        };
+
+    </script>
+    <div style="text-align:center;font-size:small" id="stage_timing"></div>
+
+</body>
+
+</html>

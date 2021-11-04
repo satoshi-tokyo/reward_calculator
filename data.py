@@ -270,7 +270,8 @@ def main():
             summary = sorted(_summary, key=lambda x: x["epoch"], reverse=True)
             with open(os.path.join(json_folder, "summary.json"), "w") as f:
                 json.dump(summary, f)
-        epochs = ep.epoch_stake_timing()
+        _epochs = ep.epoch_stake_timing()
+        epochs = sorted(_epochs, key=lambda x: x["epoch"], reverse=True)
         with open(os.path.join(json_folder, "epoch_stake_timing.json"), "w") as f:
             json.dump(epochs, f)
 
