@@ -245,7 +245,7 @@ def main():
                 json.dump(calc_obj.params, f)
         _summary = []
         for e_file in os.listdir(json_folder):
-            if e_file in ["data.json", "summary.json"]:
+            if e_file in ["data.json", "summary.json", "epoch_stake_timing.json"]:
                 continue
             with open(os.path.join(json_folder, e_file), "r") as f:
                 _e_data = json.load(f)
@@ -283,7 +283,7 @@ def main():
     # If no stake is specified, output data.
     if args.stake is None and args.simul is None:
         print(
-            f"Output epoch {calc_obj.params["epoch"]} pool reward and parameters..")
+            f"Output epoch {calc_obj.params['epoch']} pool reward and parameters..")
         print(calc_obj.params)
 
 
