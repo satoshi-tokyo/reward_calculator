@@ -133,3 +133,5 @@ settings.py
 sqlite3.db
 .devcontainer/*
 .vscode/*
+
+reward_data/*

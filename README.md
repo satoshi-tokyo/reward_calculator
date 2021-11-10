@@ -7,7 +7,7 @@ POOL_ID = "poolxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"  # Pool id
 PROJECT_ID = "XXXXXXXXXXXXXXXXXXXXXXXXXX"  # Project API Key from Blockfrost
 ```
 
-## Command options - reward.py
+## Command options - data.py
 -help option 
 ```
 $ python reward.py -h
@@ -59,6 +59,32 @@ optional arguments:
 
 `python pool_stats.py -pool all` will query data of all pools and outputs into a csv file.
 
+
+## Command options - reward_history.py
+
+```
+$ python reward_history.py -h
+usage: reward_history.py [-h] [-stake_address STAKE_ADDRESS] [-epoch_start EPOCH_START] [-epoch_end EPOCH_END] [-delegators DELEGATORS]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -stake_address STAKE_ADDRESS
+                        stake address
+  -epoch_start EPOCH_START
+                        epoch start
+  -epoch_end EPOCH_END  epoch end
+  -delegators DELEGATORS
+                        to get data for delegators, expects y when enabled.
+```
+
+E.g.,
+```
+$ python reward_history.py -stake_address stake1u9pauffgsgy98q3rgqn27ajsy2a4m5ejw6dlw9dqw5c280gpdwhvh -epoch_start 288 -epoch_end 289
+```
+
+- Lists and prints rewards history. If start and/or end epochs spefieied, it prints and sums rewards in the range of the epoch.
+- Outputs a json file under reward_data folder with {stake_address}.json format.
+- With `-delegators y` is specified, it retrieves stake addersses from pool delegators' data, and outputs the data into json files under reward_data folder with {stake_address}.json format. When this option is speficied, it exits after performing so, ie., `-stake_address`, `-epoch_start` and `-epoch_end` are not taken in account.
 
 ## tweet.py
 Tweet pool statistics.

@@ -60,3 +60,12 @@ class Pool(object):
         else:
             return json.loads(response.text)
         return {"status": "Epoch data not found", "message": "Pool might be too new to have epoch {} data".format(epoch)}
+
+    def pool_delegators(self):
+        """
+            Returns:
+                (list): delegators' stake address and live_stake.
+        """
+        url = self.mainnet_url + "/pools/" + POOL_ID + "/delegators"
+        response = requests.get(url, headers=HEADERS)
+        return json.loads(response.text)

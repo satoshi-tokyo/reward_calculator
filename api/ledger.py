@@ -92,3 +92,14 @@ class Ledger(object):
             e['epoch']) == str(self.epoch)]
         epoch_info = _epoch_info[0]
         return epoch_info['blocks']
+
+    def reward_history(self, stake_address):
+        """ Returns rewards history of given stake address.
+            Args:
+                stake_address(str): stake address
+            Returns
+                (list): list of rewards history
+        """
+        url = self.mainnet_url + "/accounts/" + stake_address + "/rewards"
+        response = requests.get(url, headers=HEADERS)
+        return json.loads(response.text)
