@@ -36,7 +36,8 @@ def stake_address_reward():
         epoch_end = args.epoch_end
 
     reward_data_folder = "reward_data"
-    shutil.rmtree(reward_data_folder)
+    if os.path.exists(reward_data_folder):
+        shutil.rmtree(reward_data_folder)
     os.mkdir(reward_data_folder)
 
     if args.delegators == "y":
