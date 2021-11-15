@@ -228,13 +228,13 @@ Epoch 3: Reward is calculated based on performance.
 epoch 4: Rewards are delivered to stake holders.
 """
 
-    text5 = """
-"Don’t pay attention to the noise, follow the facts." - Charles Hoskinson
-"""
+#     text5 = """
+# "Don’t pay attention to the noise, follow the facts." - Charles Hoskinson
+# """
 
-    text6 = """
-"Don’t be evil" to "Can’t be evil" - Charles Hoskinson
-"""
+#     text6 = """
+# "Don’t be evil" to "Can’t be evil" - Charles Hoskinson
+# """
 
     text7 = """
 For the first time of delegation, you may be worried about whether you are in a proper staking condition.
@@ -289,8 +289,10 @@ The pool is rewarded for successful block generation.
 The reward is distributed according to the amount of stake each member has delegated.
 """
 
+    # text_list = [text1, text2, text3, text4,
+    #              text5, text6, text7, text8, text9, text10, text11, text12, text13, text14]
     text_list = [text1, text2, text3, text4,
-                 text5, text6, text7, text8, text9, text10, text11, text12, text13, text14]
+                 text7, text8, text9, text10, text11, text12, text13, text14]
     return random.choice(text_list)
 
 
