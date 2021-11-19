@@ -194,10 +194,14 @@ $ADA ホルダーが自身のADAに付随するステークをステーク・プ
 """
 
     text16 = """
+$ADA は最初のコンピュータプログラマとされる数学者のエイダラブレスにちなんでつけられた名前です。
+ウォレットでも小数点以下の細かい残高を見ることがありますが、1 Ada = 1,000,000 Lovelaceという単位でも表現されます。
+
+#Cardano
 """
 
     text_list = [text1, text2, text3, text4,
-                 text5, text6, text7, text8, text9, text10, text11, text12, text13, text14, text15]
+                 text5, text6, text7, text8, text9, text10, text11, text12, text13, text14, text15, text16]
     return random.choice(text_list)
 
 
@@ -302,10 +306,17 @@ Unissued ADA is called reserve, and is taken out at a fixed rate every five days
 The maximum supply of #Cardano $ADA is set at 45,000,000,000, so there is no need to worry about price collapse due to over supply.
 """
 
+    text16 = """
+$ADA is named after Ada Lovelace, a mathematician who is considered to be the first computer programmer.
+You may also see fine decimal balances in wallets, which are also expressed in units of 1 Ada = 1,000,000 Lovelace.
+
+#Cardano
+"""
+
     # text_list = [text1, text2, text3, text4,
     #              text5, text6, text7, text8, text9, text10, text11, text12, text13, text14]
     text_list = [text1, text2, text3, text4,
-                 text7, text8, text9, text10, text11, text12, text13, text14, text15]
+                 text7, text8, text9, text10, text11, text12, text13, text14, text15, text16]
     return random.choice(text_list)
 
 
