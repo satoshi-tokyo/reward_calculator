@@ -188,8 +188,16 @@ $ADA ホルダーが自身のADAに付随するステークをステーク・プ
 ブロック生成に成功させることでプールは報酬を受け取り、その報酬は各メンバーが委任したステークの量に応じて分配されます。
 """
 
+    text15 = """
+未発行のADAはリザーブと呼ばれ、5日ごとに一定の割合で取り出されるため市場の供給量は増えていきます。
+#Cardano $ADA の最大供給量は45,000,000,000と決まっており、無尽蔵に増やされることによる値崩れの心配はありません。
+"""
+
+    text16 = """
+"""
+
     text_list = [text1, text2, text3, text4,
-                 text5, text6, text7, text8, text9, text10, text11, text12, text13, text14]
+                 text5, text6, text7, text8, text9, text10, text11, text12, text13, text14, text15]
     return random.choice(text_list)
 
 
@@ -289,10 +297,15 @@ The pool is rewarded for successful block generation.
 The reward is distributed according to the amount of stake each member has delegated.
 """
 
+    text15 = """
+Unissued ADA is called reserve, and is taken out at a fixed rate every five days, thus increasing the supply in the market.
+The maximum supply of #Cardano $ADA is set at 45,000,000,000, so there is no need to worry about price collapse due to over supply.
+"""
+
     # text_list = [text1, text2, text3, text4,
     #              text5, text6, text7, text8, text9, text10, text11, text12, text13, text14]
     text_list = [text1, text2, text3, text4,
-                 text7, text8, text9, text10, text11, text12, text13, text14]
+                 text7, text8, text9, text10, text11, text12, text13, text14, text15]
     return random.choice(text_list)
 
 
@@ -362,6 +375,24 @@ https://sugarstakepool.jp/2021/04/10/how-to-select-pool/
 https://sugarstakepool.jp/2021/07/11/catalyst/
 """
 
-    text_list = [text1, text2, text3, text4,
-                 text1e, text2e, text3e]
+    text5 = """
+PoolToolのダッシュボードで #Cardano 全体、プールの一覧等をみることができます。
+加えて、情報の通知をしてくれるPoolToolBotや、報酬履歴出力の機能があります。
+用語の整理と、機能の使い方を記事にしました！
+
+#Cardano
+https://sugarstakepool.jp/2021/04/08/pooltool/
+"""
+
+    text5e = """
+#Cardano network and pool statistics are listed on PoolTool's dashboard.
+In addition, there are features such as PoolToolBot, outputting reward history, etc.
+Here is a blog on terminology and how to use those features!
+
+#Cardano
+https://sugarstakepool.jp/2021/04/08/pooltool/
+"""
+
+    text_list = [text1, text2, text3, text4, text5,
+                 text1e, text2e, text3e, text5e]
     return random.choice(text_list)
