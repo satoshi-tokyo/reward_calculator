@@ -93,7 +93,26 @@ def main():
             int(p["active_stake"]) / 1000000 / 1000000, 3)
         # print(f'Active stake: {p["active_stake"]}')
 
-        text = """
+        if performance_in_prct < 50:
+            text = """
+プールのご報告
+今回の割り当ては少ない結果でした。
+申し訳ありません。
+
+Epoch {} の成績
+- Blocks minted: {}
+- Active stake: {} M
+- Pool performance: {} %
+
+Epoch {} も尽力します！
+- Start: {} JST (UTC+9)
+- End  : {} JST (UTC+9)
+
+#Cardano
+        """.format(calc_epoch, p["blocks"], active_stake_in_ada_m, performance_in_prct, epoch_latest, dt_epoch_start, dt_epoch_end)
+
+        elif performance_in_prct >= 50 and performance_in_prct < 100:
+            text = """
 プールのご報告
 いつも応援ありがとうございます！
 
@@ -106,7 +125,25 @@ Epoch {} もよろしくお願いします！
 - Start: {} JST (UTC+9)
 - End  : {} JST (UTC+9)
 
-#Cardano #Blockfrost
+#Cardano
+        """.format(calc_epoch, p["blocks"], active_stake_in_ada_m, performance_in_prct, epoch_latest, dt_epoch_start, dt_epoch_end)
+
+        elif performance_in_prct >= 100:
+            text = """
+プールのご報告
+いつもありがとうございます！
+お陰様で良い成績でした！
+
+Epoch {} の成績
+- Blocks minted: {}
+- Active stake: {} M
+- Pool performance: {} %
+
+Epoch {} も気を抜かず精進します。
+- Start: {} JST (UTC+9)
+- End  : {} JST (UTC+9)
+
+#Cardano
         """.format(calc_epoch, p["blocks"], active_stake_in_ada_m, performance_in_prct, epoch_latest, dt_epoch_start, dt_epoch_end)
 
     if is_test:
