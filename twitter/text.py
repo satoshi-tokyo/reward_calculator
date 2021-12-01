@@ -404,6 +404,24 @@ Here is a blog on terminology and how to use those features!
 https://sugarstakepool.jp/2021/04/08/pooltool/
 """
 
-    text_list = [text1, text2, text3, text4, text5,
-                 text1e, text2e, text3e, text5e]
+    text6 = """
+#Cardanocube は #Cardano で作られているdAppsやプロジェクトがリストされています。
+
+カテゴリ分けされ全容がぱっと見で分かりやすいです！
+各プロジェクトの概要説明もあります。
+
+https://www.cardanocube.io/
+"""
+
+    text6e = """
+#Cardanocube is a list of dApps and projects that are built on #Cardano.
+
+It's categorized and easy to understand at a glance!
+There is also an overview of all projects and dApps.
+
+https://www.cardanocube.io/
+"""
+
+    text_list = [text1, text2, text3, text4, text5, text6,
+                 text1e, text2e, text3e, text5e, text6e]
     return random.choice(text_list)
