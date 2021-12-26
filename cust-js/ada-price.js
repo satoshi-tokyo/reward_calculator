@@ -11,9 +11,9 @@ function getAdaPrice() {
 
         // Render
         var stage_ada_price = document.getElementById('stage_ada_price');
-        tag = "<font size='2' color='#77add1'>";
-        tag_ada_price = tag + "ADA Price: <br><b>" + ada_price_usd + " USD</b><br>";
-        tag_ada_price += "<b>" + ada_price_jpy + " JYP</b><br></font>";
+        tag = "<font size='3' color='#1e90ff'>";
+        tag_ada_price = tag + "<b>" + ada_price_usd + " USD</b><br>";
+        tag_ada_price += "<b>" + ada_price_jpy + " JPY</b><br></font>";
         stage_ada_price.innerHTML = tag_ada_price;
     });
 };
