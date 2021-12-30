@@ -11,7 +11,7 @@ function getEpoch() {
         // Render
         var stage_current_epoch = document.getElementById('stage_current_epoch');
         tag = "<font size='2' color='#1e90f'>";
-        tag_epoch = tag + "現在のエポック: <b>" + current_epoch + "</b><br></font>";
+        tag_epoch = tag + "Current Epoch (現在のエポック): <b>" + current_epoch + "</b><br></font>";
         stage_current_epoch.innerHTML = tag_epoch;
     });
 };
