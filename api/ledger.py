@@ -86,11 +86,20 @@ class Ledger(object):
         """
             Returns(int): count of blocks minted
         """
-        url = "https://cardano-mainnet.blockfrost.io/api/v0/pools/" + POOL_ID + "/history"
-        response = requests.get(url, headers=HEADERS)
-        _epoch_info = [e for e in json.loads(response.text) if str(
-            e['epoch']) == str(self.epoch)]
-        epoch_info = _epoch_info[0]
+        page = 1
+        while True:
+            url = "https://cardano-mainnet.blockfrost.io/api/v0/pools/" + \
+                POOL_ID + "/history/?page={}".format(page)
+            response = requests.get(url, headers=HEADERS)
+            if response.text == []:
+                break
+            _epoch_info = []
+            _epoch_info = [e for e in json.loads(response.text) if str(
+                e['epoch']) == str(self.epoch)]
+            if _epoch_info:
+                epoch_info = _epoch_info[0]
+                break
+            page += 1
         return epoch_info['blocks']
 
     def reward_history(self, stake_address):
