@@ -2,7 +2,7 @@ import random
 
 
 def day2():
-    """ Texts regarding stake pool in Japanese & English.
+    """ Texts regarding stake pool in Japanese & English, and general information.
     Returns:
         text(str)
     """
@@ -83,8 +83,19 @@ Please use the reward simulation as a reference.
 https://sugarstakepool.jp/dashboard/
 """
 
+    text6 = """
+$ADA や暗号資産の売買の際、取引所に比べ販売所はスプレッドがあるため検討が必要です。
+
+購入と売却のできる価格差が開いていることがあり、これが実質手数料となるため、気づかないうちに多くの手数料を払っていないかご注意ください。
+"""
+
+    text7 = """
+#BITPOINT は2021年に日本で初めて#Cardano $ADA の取り扱いを開始しました。
+当初は販売所のみの対応でしたが、BITPOINT PROで取引所形式での売買ができます。
+"""
+
     text_list = [text1, text2, text3, text4, text5,
-                 text1e, text2e, text3e, text4e, text5e]
+                 text1e, text2e, text3e, text4e, text5e, text6, text7]
     return random.choice(text_list)
 
 
@@ -422,6 +433,15 @@ There is also an overview of all projects and dApps.
 https://www.cardanocube.io/
 """
 
+    text7 = """
+ウォレットを作成した時に控えるリカバリフレーズは何よりも大事なものです。
+
+PCやスマホが壊れても別の端末で復元することができる唯一の方法です。
+これが第三者に知られることは資産を渡すこととほぼイコールになるため大切に保管します。
+
+#Cardano
+"""
+
     text_list = [text1, text2, text3, text4, text5, text6,
-                 text1e, text2e, text3e, text5e, text6e]
+                 text1e, text2e, text3e, text5e, text6e, text7]
     return random.choice(text_list)

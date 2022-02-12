@@ -14,7 +14,7 @@ def main():
     parser.add_argument(
         "-test", help="specify y to run a test (disables posting a tweet), defaulted no.", type=str, default='n')
     parser.add_argument(
-        "-post", help="specify y to post message, defaulted no.", type=str, default='n')
+        "-post", help="specify y to post pool performance, defaulted no.", type=str, default='n')
 
     args = parser.parse_args()
     if args.test == "y":
