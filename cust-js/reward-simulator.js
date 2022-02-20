@@ -40,6 +40,10 @@ function getData(inputValue) {
         calculated_reward_in_ada = delegators_reward * delegator_stake / pool_active_stake / 1000000;
         calculated_reward_in_ada_rounded = Math.round(calculated_reward_in_ada * 100) / 100;
 
+        if (calculated_reward_in_ada_rounded < 0) [
+            calculated_reward_in_ada_rounded = 0
+        ]
+
         // Render
         var stage_block_reward = document.getElementById('stage_block_reward');
 
