@@ -33,21 +33,21 @@ We have successfully generated over 500 blocks.
 SUGAR Stake Pool will continue to strive for stable and secure operation, so please consider delegating and cooperate with us.
 """
 
-    text3 = """
-SUGAR ステークプールは「段階的な手数料」で運営しております。
-ステークが10M集まるまでは0%で、委任のご協力をいただいている皆様へのメリット重視で運用いたします。
+#     text3 = """
+# SUGAR ステークプールは「段階的な手数料」で運営しております。
+# ステークが10M集まるまでは0%で、委任のご協力をいただいている皆様へのメリット重視で運用いたします。
 
-詳細についてはブログもご覧ください。
-https://sugarstakepool.jp/2021/09/18/pool_fee/
-"""
+# 詳細についてはブログもご覧ください。
+# https://sugarstakepool.jp/2021/09/18/pool_fee/
+# """
 
-    text3e = """
-SUGAR Stake Pool is operated on a "tiered fee" basis.
-The fee will be 0% until 10M stakes are collected to focus on the benefits to those who have been cooperating in the delegation.
+#     text3e = """
+# SUGAR Stake Pool is operated on a "tiered fee" basis.
+# The fee will be 0% until 10M stakes are collected to focus on the benefits to those who have been cooperating in the delegation.
 
-For more information, please also visit our blog.
-https://sugarstakepool.jp/2021/09/18/pool_fee/
-"""
+# For more information, please also visit our blog.
+# https://sugarstakepool.jp/2021/09/18/pool_fee/
+# """
 
     text4 = """
 堅牢な #Cardano システムのため、分散化が重要です。
@@ -67,21 +67,21 @@ SUGAR Stake Pool is operated with the following ideas.
 - Before running multiple pools, it is important to consider in other methods.
 """
 
-    text5 = """
-プールの運用実績はこちらへまとめております。
-報酬のシミュレーションは参考値としてご活用ください。
+#     text5 = """
+# プールの運用実績はこちらへまとめております。
+# 報酬のシミュレーションは参考値としてご活用ください。
 
-#Cardano
-https://sugarstakepool.jp/dashboard/
-"""
+# #Cardano
+# https://sugarstakepool.jp/dashboard/
+# """
 
-    text5e = """
-Pool statistics are summarized here.
-Please use the reward simulation as a reference.
+#     text5e = """
+# Pool statistics are summarized here.
+# Please use the reward simulation as a reference.
 
-#Cardano
-https://sugarstakepool.jp/dashboard/
-"""
+# #Cardano
+# https://sugarstakepool.jp/dashboard/
+# """
 
     text6 = """
 $ADA や暗号資産の売買の際、取引所に比べ販売所はスプレッドがあるため検討が必要です。
@@ -94,8 +94,10 @@ $ADA や暗号資産の売買の際、取引所に比べ販売所はスプレッ
 当初は販売所のみの対応でしたが、BITPOINT PROで取引所形式での売買ができます。
 """
 
-    text_list = [text1, text2, text3, text4, text5,
-                 text1e, text2e, text3e, text4e, text5e, text6, text7]
+    # text_list = [text1, text2, text3, text4, text5,
+    #              text1e, text2e, text3e, text4e, text5e, text6, text7]
+    text_list = [text1, text2, text4,
+                 text1e, text2e, text4e, text6, text7]
     return random.choice(text_list)
 
 
@@ -353,67 +355,67 @@ This is a good reference for cryptographic assets in general as well as general 
 https://bit.ly/3BtV1x9
 """
 
-    text2 = """
-「委任をするだけでなぜ報酬を得ることができるのか？報酬はどこからくるのか？」など、
-ステーキングに関して、いただいたご質問にお答えした内容の記事です。
-疑問の解消に貢献できれば嬉しいです！
+#     text2 = """
+# 「委任をするだけでなぜ報酬を得ることができるのか？報酬はどこからくるのか？」など、
+# ステーキングに関して、いただいたご質問にお答えした内容の記事です。
+# 疑問の解消に貢献できれば嬉しいです！
 
-#Cardano
-https://sugarstakepool.jp/2021/08/15/delegation-reward/
-"""
+# #Cardano
+# https://sugarstakepool.jp/2021/08/15/delegation-reward/
+# """
 
-    text2e = """
-"Why do I get paid just for delegating?"
-"Where does reward come from?"
-If you have any questions about staking, I hope this blog will help.
+#     text2e = """
+# "Why do I get paid just for delegating?"
+# "Where does reward come from?"
+# If you have any questions about staking, I hope this blog will help.
 
-#Cardano
-https://sugarstakepool.jp/2021/08/15/delegation-reward/
-"""
+# #Cardano
+# https://sugarstakepool.jp/2021/08/15/delegation-reward/
+# """
 
-    text3 = """
-初めてプールに委任した時、手数料、誓約金など、色々な数値があり困惑したことがあります。
-委任者目線でどこをみれば良いのか、どんなプールに気を付けるといいのかを書いた記事になります。
-プール選びのご参考の一つにしていただけると嬉しいです。
+#     text3 = """
+# 初めてプールに委任した時、手数料、誓約金など、色々な数値があり困惑したことがあります。
+# 委任者目線でどこをみれば良いのか、どんなプールに気を付けるといいのかを書いた記事になります。
+# プール選びのご参考の一つにしていただけると嬉しいです。
 
-#Cardano
-https://sugarstakepool.jp/2021/04/10/how-to-select-pool/
-"""
+# #Cardano
+# https://sugarstakepool.jp/2021/04/10/how-to-select-pool/
+# """
 
-    text3e = """
-When I first staked with a pool, I wasn't familiar with various numbers of fees, pledges, etc.
-This blog is about what to look for and what pools to watch out for from the perspective of a delegator, hopefully to help in finding a pool.
+#     text3e = """
+# When I first staked with a pool, I wasn't familiar with various numbers of fees, pledges, etc.
+# This blog is about what to look for and what pools to watch out for from the perspective of a delegator, hopefully to help in finding a pool.
 
-#Cardano
-https://sugarstakepool.jp/2021/04/10/how-to-select-pool/
-"""
+# #Cardano
+# https://sugarstakepool.jp/2021/04/10/how-to-select-pool/
+# """
 
-    text4 = """
-投票をすることで、今後の報酬へ影響があるかもしれません。
-投票やガバナンス、ボルテールなどについて概要レベルでとまとめてみました。
-投票方法や関連リンクもありますので、これを機会に参加者が増えればと願っています。
+#     text4 = """
+# 投票をすることで、今後の報酬へ影響があるかもしれません。
+# 投票やガバナンス、ボルテールなどについて概要レベルでとまとめてみました。
+# 投票方法や関連リンクもありますので、これを機会に参加者が増えればと願っています。
 
-#Cardano
-https://sugarstakepool.jp/2021/07/11/catalyst/
-"""
+# #Cardano
+# https://sugarstakepool.jp/2021/07/11/catalyst/
+# """
 
-    text5 = """
-PoolToolのダッシュボードで #Cardano 全体、プールの一覧等をみることができます。
-加えて、情報の通知をしてくれるPoolToolBotや、報酬履歴出力の機能があります。
-用語の整理と、機能の使い方を記事にしました！
+#     text5 = """
+# PoolToolのダッシュボードで #Cardano 全体、プールの一覧等をみることができます。
+# 加えて、情報の通知をしてくれるPoolToolBotや、報酬履歴出力の機能があります。
+# 用語の整理と、機能の使い方を記事にしました！
 
-#Cardano
-https://sugarstakepool.jp/2021/04/08/pooltool/
-"""
+# #Cardano
+# https://sugarstakepool.jp/2021/04/08/pooltool/
+# """
 
-    text5e = """
-#Cardano network and pool statistics are listed on PoolTool's dashboard.
-In addition, there are features such as PoolToolBot, outputting reward history, etc.
-Here is a blog on terminology and how to use those features!
+#     text5e = """
+# #Cardano network and pool statistics are listed on PoolTool's dashboard.
+# In addition, there are features such as PoolToolBot, outputting reward history, etc.
+# Here is a blog on terminology and how to use those features!
 
-#Cardano
-https://sugarstakepool.jp/2021/04/08/pooltool/
-"""
+# #Cardano
+# https://sugarstakepool.jp/2021/04/08/pooltool/
+# """
 
     text6 = """
 #Cardanocube は #Cardano で作られているdAppsやプロジェクトがリストされています。
@@ -442,6 +444,8 @@ PCやスマホが壊れても別の端末で復元することができる唯一
 #Cardano
 """
 
-    text_list = [text1, text2, text3, text4, text5, text6,
-                 text1e, text2e, text3e, text5e, text6e, text7]
+    text_list = [text1, text6,
+                 text1e, text6e, text7]
+    # text_list = [text1, text2, text3, text4, text5, text6,
+    #              text1e, text2e, text3e, text5e, text6e, text7]
     return random.choice(text_list)
