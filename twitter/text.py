@@ -276,7 +276,7 @@ E.g., Can't see reward as expected, how much reward is expected, etc.
     text9 = """
 After you have delegated, you will continue to be rewarded for each epoch without any additional action.
 There is a #Cardano time called 1 epoch, where 1 epoch equals 5 days.
-You can expect to earn several % interest per year, although the reward per epoch may vary.
+You can earn several % of profit per year, although the reward per epoch may vary.
 """
 
     text10 = """
