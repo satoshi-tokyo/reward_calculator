@@ -107,7 +107,7 @@ def day3():
 
     text1 = """
 #Cardano $ADA を購入した後はぜひステーキングをご検討ください！
-ホールドしたままの方は、毎エポック（5日に1度）の報酬、年間5％の利益を逃しているのでもったいないです。
+ホールドしたままの方は、毎エポック（5日に1度）の報酬、年間数%の利益を逃しているのでもったいないです。
 ステーキングによる資産を失うリスクはなく、「〜日間は取り出せない」などのロックもありません。
 """
 
@@ -163,7 +163,7 @@ https://pooltool.io/
     text9 = """
 委任ができた後は
 追加操作なしで、1エポックごとに報酬が入り続けることになります。（1エポックという #Cardano 時間があり、1エポック=5日に相当します）
-得た報酬も含め委任をしている状態（福利運用）となり、1エポック毎の報酬にはばらつきが出るものの、年利4～5%が期待できます。
+得た報酬も含め委任をしている状態（複利運用）となり、1エポック毎の報酬にはばらつきが出るものの、年利数%が期待できます。
 """
 
     text10 = """
@@ -224,7 +224,7 @@ def day4():
 
     text1 = """
 After you buy #Cardano $ADA, please consider staking it!
-If you are still holding, you are missing out on the reward of every epoch (every 5 days) and 4-5% profit per year!
+If you are still holding, you are missing out on the reward of every epoch (every 5 days)!
 There is no risk of losing your assets by staking, and your asset won't be locked.
 """
 
@@ -276,7 +276,7 @@ E.g., Can't see reward as expected, how much reward is expected, etc.
     text9 = """
 After you have delegated, you will continue to be rewarded for each epoch without any additional action.
 There is a #Cardano time called 1 epoch, where 1 epoch equals 5 days.
-You can expect to earn 4-5% interest per year, although the reward per epoch may vary.
+You can expect to earn several % interest per year, although the reward per epoch may vary.
 """
 
     text10 = """
