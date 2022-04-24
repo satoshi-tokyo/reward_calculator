@@ -94,8 +94,13 @@ $ADA や暗号資産の売買の際、取引所に比べ販売所はスプレッ
 当初は販売所のみの対応でしたが、BITPOINT PROで取引所形式での売買ができます。
 """
 
-    text_list = [text1, text2, text3, text4, text5,
-                 text1e, text2e, text3e, text4e, text5e, text6, text7]
+    text8 = """
+当プールの運用や実績、毎エポックのレポートなどの詳細は、ホームページでご確認いただければ幸いです。
+https://sugarstakepool.jp/category/journal/
+"""
+
+    text_list = [text1, text2, text3, text4, text5, text6, text7, text8,
+                 text1e, text2e, text3e, text4e, text5e]
     return random.choice(text_list)
 
 
