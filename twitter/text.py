@@ -440,6 +440,14 @@ PCやスマホが壊れても別の端末で復元することができる唯一
 #Cardano
 """
 
-    text_list = [text1, text2, text3, text4, text5, text6,
-                 text1e, text2e, text3e, text5e, text6e, text7]
+    text8 = """
+#ProjectCatalyst では、$ADA ホルダーが #Cardano の開発、ガバナンス、コミュニティ活動などに関わることができます。
+
+操作手順や注意点などを記事にしております。レポートという形でご参考いただければ幸いです。
+
+https://sugarstakepool.jp/2021/06/05/catalyst-voting/
+"""
+
+    text_list = [text1, text2, text3, text4, text5, text6, text7, text8,
+                 text1e, text2e, text3e, text5e, text6e]
     return random.choice(text_list)
