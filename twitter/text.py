@@ -453,6 +453,13 @@ PCやスマホが壊れても別の端末で復元することができる唯一
 https://sugarstakepool.jp/2021/06/05/catalyst-voting/
 """
 
-    text_list = [text1, text2, text3, text4, text5, text6, text7, text8,
+    text9 = """
+2022年6月、 #CardanoFoundation は Linux Foundation の ゴールドメンバーになりました。
+オープンソースを通じ、大規模なイノベーションの実現を目指します。
+
+https://linuxfoundation.org/our-members-are-our-superpower-2/
+"""
+
+    text_list = [text1, text2, text3, text4, text5, text6, text7, text8, text9,
                  text1e, text2e, text3e, text5e, text6e]
     return random.choice(text_list)
