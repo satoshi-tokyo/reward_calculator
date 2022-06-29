@@ -28,7 +28,7 @@ function getData() {
         hist_roa = JSON.parse(data.data.hist_roa);
         chartVal_hist_roa.push(['Epoch', 'ROA(%)', { role: "style" }, { role: 'annotation' }]);
         for (let i = 0; i < hist_roa.length; i++) {
-            p1 = [hist_roa[i].e.toString(), parseFloat(hist_roa[i].val), '#77add1', parseFloat(hist_roa[i].val)];
+            p1 = [hist_roa[i].e.toString(), parseFloat(hist_roa[i].val), '#1e90ff', parseFloat(hist_roa[i].val)];
             chartVal_hist_roa.push(p1);
         };
 
@@ -36,7 +36,7 @@ function getData() {
         hist_bpe = JSON.parse(data.data.hist_bpe);
         chartVal_hist_bpe.push(['Epoch', 'Blocks', { role: "style" }, { role: 'annotation' }]);
         for (let i = 0; i < hist_bpe.length; i++) {
-            p2 = [hist_bpe[i].e.toString(), parseInt(hist_bpe[i].val), '#77add1', parseInt(hist_bpe[i].val)];
+            p2 = [hist_bpe[i].e.toString(), parseInt(hist_bpe[i].val), '#1e90ff', parseInt(hist_bpe[i].val)];
             chartVal_hist_bpe.push(p2);
         };
 
@@ -55,7 +55,7 @@ function getData() {
         // Render
         var stage_block = document.getElementById('stage_block');
         var stage_roa = document.getElementById('stage_roa');
-        tag = "<font size='2' color='#77add1'>"
+        tag = "<font size='2' color='#1e90ff'>"
         // tag = "<span>" + poolId + "</span><br>";
         // tag += "<span>" + poolIdDaedalus + "</span><br>";
         tag_block = tag + epochBlock + "<br>";
@@ -85,7 +85,7 @@ function drawChart1() {
         'title': 'Blocks per Epoch',
         'titleTextStyle':
         {
-            'color': '#77add1',
+            'color': '#1e90ff',
             'bold': false,
             'fontSize': 16
         },
@@ -108,10 +108,10 @@ function drawChart1() {
         'hAxis': {
             'title': 'Epoch',
             'titleTextStyle': {
-                'color': '#77add1',
+                'color': '#1e90ff',
                 'italic': false
             },
-            'textStyle': { 'color': '#77add1' },
+            'textStyle': { 'color': '#1e90ff' },
             'gridlines': {
                 'count': 0
             }
@@ -119,11 +119,11 @@ function drawChart1() {
         'vAxis': {
             'title': 'Blocks',
             'titleTextStyle': {
-                'color': '#77add1',
+                'color': '#1e90ff',
                 'italic': false
             },
-            'textStyle': { 'color': '#77add1' },
-            'baselineColor': '#77add1',
+            'textStyle': { 'color': '#1e90ff' },
+            'baselineColor': '#1e90ff',
             'gridlines': {
                 'count': 0
             }
@@ -142,7 +142,7 @@ function drawChart2() {
         'title': 'ROA(%) per Epoch',
         'titleTextStyle':
         {
-            'color': '#77add1',
+            'color': '#1e90ff',
             'bold': false,
             'fontSize': 16
         },
@@ -165,10 +165,10 @@ function drawChart2() {
         'hAxis': {
             'title': 'Epoch',
             'titleTextStyle': {
-                'color': '#77add1',
+                'color': '#1e90ff',
                 'italic': false
             },
-            'textStyle': { 'color': '#77add1' },
+            'textStyle': { 'color': '#1e90ff' },
             'gridlines': {
                 'count': 0
             }
@@ -176,11 +176,11 @@ function drawChart2() {
         'vAxis': {
             'title': 'ROA(%)',
             'titleTextStyle': {
-                'color': '#77add1',
+                'color': '#1e90ff',
                 'italic': false
             },
-            'textStyle': { 'color': '#77add1' },
-            'baselineColor': '#77add1',
+            'textStyle': { 'color': '#1e90ff' },
+            'baselineColor': '#1e90ff',
             'gridlines': {
                 'count': 0
             }

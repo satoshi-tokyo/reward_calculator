@@ -10,7 +10,7 @@ function getEpoch() {
 
         // Render
         var stage_block_epoch = document.getElementById('stage_block_epoch');
-        tag = "<font size='2' color='#77add1'>";
+        tag = "<font size='2' color='#1e90ff'>";
         tag_epoch = tag + "現在のエポック: <b>" + current_epoch + "</b><br></font>";
         stage_block_epoch.innerHTML = tag_epoch;
     });
@@ -47,7 +47,7 @@ function getData(inputValue) {
         // Render
         var stage_block_reward = document.getElementById('stage_block_reward');
 
-        tag = "<font size='2' color='#77add1'>";
+        tag = "<font size='2' color='#1e90ff'>";
         tag_block = tag + "エポック" + current_epoch + "での報酬は";
         tag_block += tag + "<b>" + calculated_reward_in_ada_rounded + "</b> ADAです。<br>";
         tag_block += "</font>";
