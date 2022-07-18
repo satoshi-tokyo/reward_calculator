@@ -38,15 +38,13 @@ SUGAR ステークプールは「段階的な手数料」で運営しており�
 ステークが10M集まるまでは0%で、委任のご協力をいただいている皆様へのメリット重視で運用いたします。
 
 詳細についてはブログもご覧ください。
-https://sugarstakepool.jp/2021/09/18/pool_fee/
+https://note.com/cardano_sugar/n/n3d9815251442
 """
 
     text3e = """
 SUGAR Stake Pool is operated on a "tiered fee" basis.
 The fee will be 0% until 10M stakes are collected to focus on the benefits to those who have been cooperating in the delegation.
 
-For more information, please also visit our blog.
-https://sugarstakepool.jp/2021/09/18/pool_fee/
 """
 
     text4 = """
@@ -96,7 +94,7 @@ $ADA や暗号資産の売買の際、取引所に比べ販売所はスプレッ
 
     text8 = """
 当プールの運用や実績、毎エポックのレポートなどの詳細は、ホームページでご確認いただければ幸いです。
-https://sugarstakepool.jp/category/journal/
+https://note.com/cardano_sugar/m/me938cf4387c5
 """
 
     text_list = [text1, text2, text3, text4, text5, text6, text7, text8,
@@ -362,7 +360,7 @@ https://bit.ly/3BtV1x9
 疑問の解消に貢献できれば嬉しいです！
 
 #Cardano
-https://sugarstakepool.jp/2021/08/15/delegation-reward/
+https://note.com/cardano_sugar/n/n1739bf381ce6
 """
 
     text2e = """
@@ -371,7 +369,7 @@ https://sugarstakepool.jp/2021/08/15/delegation-reward/
 If you have any questions about staking, I hope this blog will help.
 
 #Cardano
-https://sugarstakepool.jp/2021/08/15/delegation-reward/
+https://www.reddit.com/r/sugarstakepool/comments/w1wb4v/5_staking_questions_and_how_it_works/?utm_source=share&utm_medium=web2x&context=3
 """
 
     text3 = """
@@ -380,16 +378,16 @@ https://sugarstakepool.jp/2021/08/15/delegation-reward/
 プール選びのご参考の一つにしていただけると嬉しいです。
 
 #Cardano
-https://sugarstakepool.jp/2021/04/10/how-to-select-pool/
+https://note.com/cardano_sugar/n/nc97813bec69e
 """
 
-    text3e = """
-When I first staked with a pool, I wasn't familiar with various numbers of fees, pledges, etc.
-This blog is about what to look for and what pools to watch out for from the perspective of a delegator, hopefully to help in finding a pool.
+#     text3e = """
+# When I first staked with a pool, I wasn't familiar with various numbers of fees, pledges, etc.
+# This blog is about what to look for and what pools to watch out for from the perspective of a delegator, hopefully to help in finding a pool.
 
-#Cardano
-https://sugarstakepool.jp/2021/04/10/how-to-select-pool/
-"""
+# #Cardano
+# https://sugarstakepool.jp/2021/04/10/how-to-select-pool/
+# """
 
     text4 = """
 投票をすることで、今後の報酬へ影響があるかもしれません。
@@ -397,7 +395,7 @@ https://sugarstakepool.jp/2021/04/10/how-to-select-pool/
 投票方法や関連リンクもありますので、これを機会に参加者が増えればと願っています。
 
 #Cardano
-https://sugarstakepool.jp/2021/07/11/catalyst/
+https://note.com/cardano_sugar/n/n0e2d3035c75b
 """
 
     text5 = """
@@ -406,17 +404,17 @@ PoolToolのダッシュボードで #Cardano 全体、プールの一覧等を�
 用語の整理と、機能の使い方を記事にしました！
 
 #Cardano
-https://sugarstakepool.jp/2021/04/08/pooltool/
+https://note.com/cardano_sugar/n/na6340895f03f
 """
 
-    text5e = """
-#Cardano network and pool statistics are listed on PoolTool's dashboard.
-In addition, there are features such as PoolToolBot, outputting reward history, etc.
-Here is a blog on terminology and how to use those features!
+#     text5e = """
+# #Cardano network and pool statistics are listed on PoolTool's dashboard.
+# In addition, there are features such as PoolToolBot, outputting reward history, etc.
+# Here is a blog on terminology and how to use those features!
 
-#Cardano
-https://sugarstakepool.jp/2021/04/08/pooltool/
-"""
+# #Cardano
+# https://sugarstakepool.jp/2021/04/08/pooltool/
+# """
 
     text6 = """
 #Cardanocube は #Cardano で作られているdAppsやプロジェクトがリストされています。
@@ -450,7 +448,7 @@ PCやスマホが壊れても別の端末で復元することができる唯一
 
 操作手順や注意点などを記事にしております。レポートという形でご参考いただければ幸いです。
 
-https://sugarstakepool.jp/2021/06/05/catalyst-voting/
+https://note.com/cardano_sugar/n/n9ef018b0a3d3
 """
 
     text9 = """
