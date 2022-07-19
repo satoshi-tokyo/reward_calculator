@@ -459,5 +459,5 @@ https://linuxfoundation.org/our-members-are-our-superpower-2/
 """
 
     text_list = [text1, text2, text3, text4, text5, text6, text7, text8, text9,
-                 text1e, text2e, text3e, text5e, text6e]
+                 text1e, text2e, text6e]
     return random.choice(text_list)
